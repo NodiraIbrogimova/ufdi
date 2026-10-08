@@ -1,19 +1,550 @@
-// One translation dictionary per language. Data is kept in data.json.
-const translations = {
-    en: { eyebrow: 'UZBEKISTAN · SPECIES ATLAS', title: 'Explore the snow leopard’s home', intro: 'Discover documented locations across Uzbekistan’s mountain landscapes.', version: '01 / Map prototype', selected: 'SELECTED SPECIES', species: 'Snow leopard', description: 'A mountain cat with a thick, spotted coat and a long tail. Found in rocky alpine and subalpine habitats.', altitude: 'Habitat elevation', status: 'Vulnerable', docStatus: 'Conservation status and habitat: supplied document.', locations: 'Documented locations', distribution: 'Distribution map', reset: 'Show Uzbekistan', legend: 'Reported location · population unknown', notRange: 'Points are not habitat boundaries', evidence: 'ABOUT THE DATA', sourceTitle: 'Every location has a source', sourceNote: 'These five coordinates come from your species document. Their accuracy and survey dates have not been independently verified.', contextLink: 'Read regional context from UNDP ↗', contextNote: 'UNDP describes broad landscapes; it does not verify these individual coordinates. Country outlines: Natural Earth (generalized).', next: 'WHEN POPULATION DATA IS AVAILABLE', populationTitle: 'From locations to population', less: 'Lower population', more: 'Higher population', populationNote: 'This is the planned color scale, not measured data. Area boundaries, comparable population estimates and survey dates are needed before we shade the map.', download: 'Download species data (JSON)', footer: 'Learning prototype · Distribution only · No image recognition yet', unknown: 'Unknown', coordinates: 'Document coordinates', population: 'Population', survey: 'Survey date', document: 'Document record', detailNote: 'A listed point does not establish an occupied area or the number of animals living there.', tileError: 'Background map tiles could not load. The location list and available boundary layer still work.', loadError: 'Could not load the species data. Please refresh the page.' },
-    uz: { eyebrow: 'O‘ZBEKISTON · TURLAR ATLASI', title: 'Qor barsining yashash joylari', intro: 'O‘zbekiston tog‘laridagi hujjatda keltirilgan joylarni o‘rganing.', version: '01 / Xarita prototipi', selected: 'TANLANGAN TUR', species: 'Qor barsi', description: 'Qalin, dog‘li junli va uzun dumli tog‘ mushugi. Qoyali alp va subalp hududlarida yashaydi.', altitude: 'Yashash balandligi', status: 'Zaif holatda', docStatus: 'Muhofaza holati va yashash muhiti: taqdim etilgan hujjat.', locations: 'Hujjatdagi joylar', distribution: 'Tarqalish xaritasi', reset: 'O‘zbekistonni ko‘rsatish', legend: 'Hujjatdagi joy · soni noma’lum', notRange: 'Nuqtalar yashash hududi chegarasi emas', evidence: 'MA’LUMOTLAR HAQIDA', sourceTitle: 'Har bir joyning manbasi bor', sourceNote: 'Ushbu beshta koordinata tur haqidagi hujjatingizdan olingan. Ularning aniqligi va kuzatuv sanalari mustaqil tekshirilmagan.', contextLink: 'BMTTDning hududlar haqidagi ma’lumotlari ↗', contextNote: 'BMTTD keng hududlarni tavsiflaydi; ushbu alohida koordinatalarni tasdiqlamaydi. Mamlakat chegaralari: Natural Earth (umumlashtirilgan).', next: 'POPULYATSIYA MA’LUMOTLARI MAVJUD BO‘LGANDA', populationTitle: 'Joylashuvdan populyatsiyaga', less: 'Kamroq individ', more: 'Ko‘proq individ', populationNote: 'Bu rejalashtirilgan rang shkalasi, o‘lchangan ma’lumot emas. Xaritani bo‘yash uchun hudud chegaralari, taqqoslanadigan son baholari va kuzatuv sanalari kerak.', download: 'Tur ma’lumotlarini yuklab olish (JSON)', footer: 'O‘quv prototipi · Faqat tarqalish · Rasmni tanish hali ulanmagan', unknown: 'Noma’lum', coordinates: 'Hujjatdagi koordinatalar', population: 'Individlar soni', survey: 'Kuzatuv sanasi', document: 'Hujjatdagi qayd', detailNote: 'Bitta nuqta egallangan hududni yoki u yerda yashovchi hayvonlar sonini aniqlamaydi.', tileError: 'Fon xaritasi yuklanmadi. Joylar ro‘yxati va mavjud chegaralar qatlami ishlashda davom etadi.', loadError: 'Tur ma’lumotlari yuklanmadi. Sahifani yangilang.' },
-    ru: { eyebrow: 'УЗБЕКИСТАН · АТЛАС ВИДОВ', title: 'Места обитания снежного барса', intro: 'Изучите указанные в документе места в горных районах Узбекистана.', version: '01 / Прототип карты', selected: 'ВЫБРАННЫЙ ВИД', species: 'Снежный барс', description: 'Горная кошка с густой пятнистой шерстью и длинным хвостом. Обитает в скалистых альпийских и субальпийских поясах.', altitude: 'Высота обитания', status: 'Уязвимый вид', docStatus: 'Охранный статус и среда обитания: предоставленный документ.', locations: 'Места из документа', distribution: 'Карта распространения', reset: 'Показать Узбекистан', legend: 'Место из документа · численность неизвестна', notRange: 'Точки не обозначают границы ареала', evidence: 'О ДАННЫХ', sourceTitle: 'У каждого места есть источник', sourceNote: 'Эти пять координат взяты из вашего документа о виде. Их точность и даты наблюдений независимо не проверены.', contextLink: 'Информация ПРООН о регионах ↗', contextNote: 'ПРООН описывает обширные территории, но не подтверждает отдельные координаты. Границы стран: Natural Earth (обобщённые).', next: 'КОГДА ПОЯВЯТСЯ ДАННЫЕ О ЧИСЛЕННОСТИ', populationTitle: 'От мест к численности', less: 'Меньше особей', more: 'Больше особей', populationNote: 'Это планируемая цветовая шкала, а не результаты измерений. Для окраски карты нужны границы участков, сопоставимые оценки численности и даты обследований.', download: 'Скачать данные о виде (JSON)', footer: 'Учебный прототип · Только распространение · Распознавание фото ещё не подключено', unknown: 'Неизвестно', coordinates: 'Координаты из документа', population: 'Численность', survey: 'Дата обследования', document: 'Запись из документа', detailNote: 'Отдельная точка не определяет заселённую площадь или число животных на ней.', tileError: 'Фоновая карта не загрузилась. Список мест и доступный слой границ продолжают работать.', loadError: 'Не удалось загрузить данные о виде. Обновите страницу.' }
-};
-let lang = 'uz'; try { const saved = localStorage.getItem('speciesLanguage'); if (translations[saved]) lang = saved; } catch { }
-let data, map, selected = 0, markers = [], countryLayer;
-const $ = s => document.querySelector(s);
-const text = key => translations[lang][key];
-function coord(p) { return `${p.latitude.toFixed(4)}° N, ${p.longitude.toFixed(4)}° E`; }
-function details() { if (!data) return; const p = data.locations[selected]; const target = $('#detail'); target.replaceChildren(); const head = document.createElement('div'); head.className = 'detail-head'; const h = document.createElement('h2'); h.textContent = p.name[lang]; const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = text('document'); head.append(h, tag); const grid = document.createElement('div'); grid.className = 'detail-grid'; for (const [key, value] of [['coordinates', coord(p)], ['population', p.population ?? text('unknown')], ['survey', p.surveyDate ?? text('unknown')]]) { const cell = document.createElement('div'); const label = document.createElement('span'); label.textContent = text(key); const v = document.createElement('strong'); v.textContent = value; cell.append(label, v); grid.append(cell); } const note = document.createElement('p'); note.textContent = text('detailNote'); target.append(head, grid, note); }
-function selectLocation(index, fly = true) { selected = index; document.querySelectorAll('.location').forEach((el, i) => { el.classList.toggle('active', i === index); el.setAttribute('aria-pressed', String(i === index)); }); markers.forEach((m, i) => m.setStyle({ radius: i === index ? 10 : 7, fillColor: i === index ? '#006b69' : '#758b94' })); details(); if (map && fly) { map.flyTo([data.locations[index].latitude, data.locations[index].longitude], 8, { duration: .6 }); markers[index]?.openPopup(); } }
-function render() { document.documentElement.lang = lang; document.title = `${text('species')} · Species Finder`; document.querySelectorAll('[data-t]').forEach(el => el.textContent = text(el.dataset.t)); document.querySelectorAll('[data-lang]').forEach(el => { el.classList.toggle('active', el.dataset.lang === lang); el.setAttribute('aria-pressed', String(el.dataset.lang === lang)); }); if (!data) return; $('#locations').replaceChildren(); data.locations.forEach((p, i) => { const b = document.createElement('button'); b.className = 'location'; const n = document.createElement('span'); n.className = 'number'; n.textContent = String(i + 1).padStart(2, '0'); const content = document.createElement('span'); const strong = document.createElement('strong'); strong.textContent = p.name[lang]; const small = document.createElement('small'); small.textContent = coord(p); content.append(strong, small); const arrow = document.createElement('span'); arrow.className = 'arrow'; arrow.textContent = '↗'; arrow.setAttribute('aria-hidden', 'true'); b.append(n, content, arrow); b.onclick = () => selectLocation(i); $('#locations').append(b); if (markers[i]) { const popup = document.createElement('div'); const title = document.createElement('strong'); title.textContent = p.name[lang]; const sub = document.createElement('div'); sub.textContent = text('legend'); popup.append(title, sub); markers[i].bindPopup(popup); } }); selectLocation(selected, false); }
-document.querySelectorAll('[data-lang]').forEach(b => b.onclick = () => { lang = b.dataset.lang; try { localStorage.setItem('speciesLanguage', lang); } catch { } render(); });
-$('#reset').onclick = () => map?.fitBounds([[37.1, 55.9], [45.7, 73.2]], { padding: [12, 12] });
-$('#download').onclick = () => { if (!data) return; const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'snow-leopard-data.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); };
-render();
-(async () => { try { const r = await fetch('data.json'); if (!r.ok) throw Error('data'); data = await r.json(); render(); if (!window.L) { $('#map-warning').hidden = false; return; } map = L.map('map', { scrollWheelZoom: false, minZoom: 4, maxZoom: 13 }); map.fitBounds([[37.1, 55.9], [45.7, 73.2]], { padding: [12, 12] }); const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map); tiles.on('tileerror', () => $('#map-warning').hidden = false); markers = data.locations.map((p, i) => L.circleMarker([p.latitude, p.longitude], { radius: 7, color: '#fff', weight: 2, fillColor: '#758b94', fillOpacity: 1 }).addTo(map).on('click', () => selectLocation(i, false))); render(); try { const r = await fetch('assets/region.geojson'); if (r.ok) { const region = await r.json(); countryLayer = L.geoJSON(region, { style: f => ({ color: f.properties.ADM0_A3 === 'UZB' ? '#267d7c' : '#8b9ca5', weight: f.properties.ADM0_A3 === 'UZB' ? 2 : 1, fillColor: f.properties.ADM0_A3 === 'UZB' ? '#c1dcda' : '#e4ecef', fillOpacity: .23 }), interactive: false }).addTo(map); countryLayer.bringToBack(); map.attributionControl.addAttribution('<a href="https://www.naturalearthdata.com/">Natural Earth</a>'); } } catch { } } catch { const e = document.createElement('p'); e.className = 'notice'; e.textContent = text('loadError'); $('#detail').replaceChildren(e); } })();
+const $ = selector => document.querySelector(selector);
+
+let lang = 'uz';
+
+try {
+  lang = localStorage.getItem('faunadata-language') || 'uz';
+} catch {}
+
+if (!translations[lang]) lang = 'uz';
+
+const t = key => translations[lang][key] || key;
+
+const localize = value =>
+  value && typeof value === 'object'
+    ? value[lang] || value.en
+    : value;
+
+let data = null;
+let map = null;
+let selected = null;
+let imageURL = null;
+let fileGeneration = 0;
+let loadFailed = false;
+let uploadErrorKey = null;
+
+const markers = new Map();
+
+const countryBounds = [
+  [37.1, 55.9],
+  [45.7, 73.2]
+];
+
+function element(tag, text, className) {
+  const node = document.createElement(tag);
+
+  if (text !== undefined) {
+    node.textContent = text;
+  }
+
+  if (className) {
+    node.className = className;
+  }
+
+  return node;
+}
+
+function color(location) {
+  const count = location.populationRange?.max;
+
+  if (count == null) return '#758b94';
+  if (count <= 15) return '#efcd42';
+  if (count <= 30) return '#e98c32';
+
+  return '#9d342d';
+}
+
+function translate() {
+  document.documentElement.lang = lang;
+  document.title = 'FAUNADATA INTERNATIONAL · UFDI';
+
+  document.querySelectorAll('[data-t]').forEach(node => {
+    node.textContent = t(node.dataset.t);
+  });
+
+  document.querySelectorAll('[data-lang]').forEach(button => {
+    const active = button.dataset.lang === lang;
+
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+
+  $('#preview-image').alt = t('yourPhoto');
+
+  $('#map').setAttribute(
+    'aria-label',
+    t('distribution')
+  );
+
+  $('#project-fields').replaceChildren(
+    ...translations[lang].fields.map(text =>
+      element('li', text)
+    )
+  );
+
+  if (data) renderRecords();
+  if (selected) showDetail(selected);
+
+  if (loadFailed) {
+    $('#load-error').textContent = t('loadError');
+  }
+
+  if (uploadErrorKey) {
+    $('#upload-error').textContent = t(uploadErrorKey);
+  }
+
+  window.renderRecognition?.();
+}
+
+function addDetail(list, label, value) {
+  const displayedValue =
+    value == null || value === ''
+      ? t('unknown')
+      : value;
+
+  list.append(
+    element('dt', label),
+    element('dd', displayedValue)
+  );
+}
+
+function showDetail(location) {
+  selected = location;
+
+  const list = element('dl');
+
+  addDetail(
+    list,
+    t('coordinates'),
+    `${location.latitude}, ${location.longitude}`
+  );
+
+  addDetail(
+    list,
+    t('population'),
+    location.population
+  );
+
+  addDetail(
+    list,
+    t('survey'),
+    location.surveyDate
+  );
+
+  addDetail(
+    list,
+    t('scope'),
+    localize(location.estimateScope)
+  );
+
+  addDetail(
+    list,
+    t('method'),
+    localize(location.method)
+  );
+
+  const heading = element(
+    'h3',
+    localize(location.name)
+  );
+
+  const note = element(
+    'p',
+    t('countScopeNote'),
+    'secondary'
+  );
+
+  $('#detail').replaceChildren(
+    heading,
+    list,
+    note
+  );
+
+  if (location.evidenceUrl) {
+    const link = element(
+      'a',
+      t('source') + ' ↗'
+    );
+
+    link.href = location.evidenceUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+
+    $('#detail').append(link);
+  }
+
+  document.querySelectorAll('[data-location]').forEach(button => {
+    const active = button.dataset.location === location.id;
+
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+
+  markers.forEach((marker, id) => {
+    marker.setStyle({
+      weight: id === location.id ? 3 : 1.5
+    });
+  });
+}
+
+function selectLocation(location) {
+  showDetail(location);
+
+  map?.flyTo(
+    [location.latitude, location.longitude],
+    8
+  );
+}
+
+function renderRecords() {
+  $('#locations').replaceChildren(
+    ...data.locations.map(location => {
+      const button = element(
+        'button',
+        localize(location.name),
+        'location'
+      );
+
+      button.dataset.location = location.id;
+
+      button.append(
+        element(
+          'small',
+          location.population == null
+            ? t('unknownBin')
+            : location.population
+        )
+      );
+
+      button.addEventListener('click', () => {
+        selectLocation(location);
+      });
+
+      return button;
+    })
+  );
+
+  $('#planned-species').replaceChildren(
+    ...data.plannedSpecies.map(species => {
+      const item = element('li');
+
+      item.append(
+        element('strong', localize(species.names)),
+        element('em', species.scientificName)
+      );
+
+      return item;
+    })
+  );
+
+  $('#population-evidence').replaceChildren(
+    ...data.regionalEstimates.map(estimate => {
+      const card = element(
+        'article',
+        undefined,
+        'evidence'
+      );
+
+      card.append(
+        element('h3', localize(estimate.name)),
+
+        element(
+          'strong',
+          `${estimate.min}–${estimate.max}`,
+          'population-number'
+        ),
+
+        element('p', localize(estimate.period)),
+
+        element(
+          'p',
+          localize(estimate.method),
+          'secondary'
+        )
+      );
+
+      return card;
+    })
+  );
+
+  $('#biology-record').replaceChildren(
+    ...data.biologicalRecord.map(record => {
+      const card = element('article');
+
+      card.append(
+        element('h3', localize(record.label)),
+        element('p', localize(record.value))
+      );
+
+      return card;
+    })
+  );
+}
+
+function createMap() {
+  if (map || !data) return;
+
+  if (!window.L) {
+    $('#map').hidden = true;
+    $('#map-warning').hidden = false;
+    $('#map-warning').dataset.t = 'mapUnavailable';
+    $('#map-warning').textContent = t('mapUnavailable');
+
+    return;
+  }
+
+  map = L.map('map', {
+    scrollWheelZoom: false
+  }).fitBounds(countryBounds);
+
+  L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+      maxZoom: 18,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }
+  )
+    .on('tileerror', () => {
+      $('#map-warning').hidden = false;
+    })
+    .addTo(map);
+
+  data.locations.forEach(location => {
+    if (
+      !Number.isFinite(location.latitude) ||
+      !Number.isFinite(location.longitude)
+    ) {
+      return;
+    }
+
+    const marker = L.circleMarker(
+      [location.latitude, location.longitude],
+      {
+        radius: 11,
+        color: '#183b35',
+        weight: 1.5,
+        fillColor: color(location),
+        fillOpacity: 0.9
+      }
+    ).addTo(map);
+
+    marker.on('click', () => {
+      selectLocation(location);
+    });
+
+    markers.set(location.id, marker);
+  });
+
+  showDetail(selected || data.locations[0]);
+}
+
+function route() {
+  const showSpecies =
+    location.hash === '#/species/panthera-uncia';
+
+  $('#start-view').hidden = showSpecies;
+  $('#species-view').hidden = !showSpecies;
+  $('#species-content').hidden = !data;
+  $('#load-error').hidden = !loadFailed;
+
+  if (showSpecies && data) {
+    createMap();
+
+    requestAnimationFrame(() => {
+      map?.invalidateSize();
+    });
+  }
+}
+
+function uploadError(key) {
+  uploadErrorKey = key;
+
+  $('#upload-error').textContent = t(key);
+  $('#upload-error').hidden = false;
+}
+
+async function acceptFile(file) {
+  if (!file) return;
+
+  const job = ++fileGeneration;
+
+  window.cancelRecognition?.();
+
+  $('#review').hidden = true;
+  $('#uncertain-message').hidden = true;
+  $('#upload-error').hidden = true;
+
+  uploadErrorKey = null;
+
+  if (imageURL) {
+    URL.revokeObjectURL(imageURL);
+  }
+
+  imageURL = null;
+
+  if (!file.type.startsWith('image/')) {
+    return uploadError('invalidFile');
+  }
+
+  if (file.size > 12 * 1024 * 1024) {
+    return uploadError('tooLarge');
+  }
+
+  const url = URL.createObjectURL(file);
+  const image = new Image();
+
+  image.src = url;
+
+  try {
+    await image.decode();
+
+    if (job !== fileGeneration) {
+      URL.revokeObjectURL(url);
+      return;
+    }
+
+    imageURL = url;
+
+    $('#preview-image').src = url;
+    $('#review').hidden = false;
+
+    window.identifyAnimal?.(image);
+  } catch {
+    URL.revokeObjectURL(url);
+
+    if (job === fileGeneration) {
+      uploadError('decodeError');
+    }
+  }
+}
+
+$('#animal-image').addEventListener('change', event => {
+  acceptFile(event.target.files[0]);
+
+  // Allows choosing the same file again.
+  event.target.value = '';
+});
+
+$('#drop-zone').addEventListener('keydown', event => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    $('#animal-image').click();
+  }
+});
+
+['dragenter', 'dragover'].forEach(type => {
+  $('#drop-zone').addEventListener(type, event => {
+    event.preventDefault();
+    $('#drop-zone').classList.add('dragging');
+  });
+});
+
+['dragleave', 'drop'].forEach(type => {
+  $('#drop-zone').addEventListener(type, event => {
+    event.preventDefault();
+    $('#drop-zone').classList.remove('dragging');
+
+    if (type === 'drop') {
+      acceptFile(event.dataTransfer.files[0]);
+    }
+  });
+});
+
+$('#confirm').addEventListener('click', () => {
+  if (imageURL) {
+    location.hash = '/species/panthera-uncia';
+    window.scrollTo(0, 0);
+  }
+});
+
+$('#uncertain').addEventListener('click', () => {
+  $('#uncertain-message').hidden = false;
+});
+
+$('#reset').addEventListener('click', () => {
+  map?.fitBounds(countryBounds);
+});
+
+$('#download').addEventListener('click', () => {
+  if (!data) return;
+
+  const url = URL.createObjectURL(
+    new Blob(
+      [JSON.stringify(data, null, 2)],
+      { type: 'application/json' }
+    )
+  );
+
+  const link = element('a');
+
+  link.href = url;
+  link.download = 'panthera-uncia.json';
+
+  document.body.append(link);
+
+  link.click();
+  link.remove();
+
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 1000);
+});
+
+document.querySelectorAll('[data-lang]').forEach(button => {
+  button.addEventListener('click', () => {
+    lang = button.dataset.lang;
+
+    try {
+      localStorage.setItem('faunadata-language', lang);
+    } catch {}
+
+    translate();
+  });
+});
+
+window.addEventListener('hashchange', route);
+
+window.addEventListener('pagehide', () => {
+  if (imageURL) {
+    URL.revokeObjectURL(imageURL);
+  }
+});
+
+translate();
+route();
+
+fetch('data.json')
+  .then(response => {
+    if (!response.ok) {
+      throw Error('data');
+    }
+
+    return response.json();
+  })
+  .then(record => {
+    if (
+      record.id !== 'panthera-uncia' ||
+      !Array.isArray(record.locations) ||
+      !record.locations.length
+    ) {
+      throw Error('data');
+    }
+
+    data = record;
+
+    renderRecords();
+
+    selected = data.locations[0];
+
+    showDetail(selected);
+    route();
+  })
+  .catch(() => {
+    loadFailed = true;
+
+    $('#load-error').textContent = t('loadError');
+
+    uploadError('loadError');
+    route();
+  });

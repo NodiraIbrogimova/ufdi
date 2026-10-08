@@ -1,1 +1,399 @@
-{"id":"panthera-uncia","scientificName":"Panthera uncia","names":{"uz":"Qor barsi","ru":"Снежный барс","en":"Snow leopard"},"source":"1-tur Qor barsi Panthera.docx","coordinateStatus":"document_provided_not_independently_verified","locations":[{"id":"hisor","name":{"uz":"Hisor","ru":"Гиссар","en":"Hisor"},"latitude":38.295,"longitude":67.498,"population":null,"surveyDate":null,"boundary":null},{"id":"chatqol","name":{"uz":"Chatqol","ru":"Чаткал","en":"Chatqol"},"latitude":41.405,"longitude":70.419,"population":null,"surveyDate":null,"boundary":null},{"id":"topolang","name":{"uz":"Yuqori To‘polang","ru":"Верхний Тупаланг","en":"Upper To‘polang"},"latitude":38.173,"longitude":67.186,"population":null,"surveyDate":null,"boundary":null},{"id":"zarafshon","name":{"uz":"Zarafshon","ru":"Зарафшан","en":"Zarafshon"},"latitude":39.278,"longitude":68.331,"population":null,"surveyDate":null,"boundary":null},{"id":"pskem","name":{"uz":"Pskem–Ugam","ru":"Пскем–Угам","en":"Pskem–Ugam"},"latitude":41.59,"longitude":70.25,"population":null,"surveyDate":null,"boundary":null}]}
+{
+    "id": "panthera-uncia",
+    "scientificName": "Panthera uncia",
+    "names": {
+        "uz": "Qor barsi",
+        "ru": "Снежный барс",
+        "en": "Snow leopard"
+    },
+    "source": {
+        "id": "user-supplied-snow-leopard-doc",
+        "title": "1-tur Qor barsi Panthera.docx",
+        "type": "user_supplied_document",
+        "url": null,
+        "publicationDate": null,
+        "independentVerification": false
+    },
+    "coordinateStatus": "document_provided_not_independently_verified",
+    "locations": [
+        {
+            "id": "hisor",
+            "name": {
+                "uz": "Hisor",
+                "ru": "Гиссар",
+                "en": "Hisor"
+            },
+            "latitude": 38.295,
+            "longitude": 67.498,
+            "population": null,
+            "surveyDate": "2026",
+            "populationRange": null,
+            "method": null,
+            "estimateScope": null,
+            "evidenceUrl": "https://gov.uz/en/eco/news/view/189841"
+        },
+        {
+            "id": "chatqol",
+            "name": {
+                "uz": "Chatqol",
+                "ru": "Чаткал",
+                "en": "Chatqol"
+            },
+            "latitude": 41.405,
+            "longitude": 70.419,
+            "population": "12–13",
+            "surveyDate": "2019–2022",
+            "populationRange": {
+                "min": 12,
+                "max": 13
+            },
+            "method": {
+                "uz": "Fototuzoq va zichlik bahosidan populyatsiya sonini hisoblash",
+                "ru": "Фотоловушки и экстраполяция оценки плотности",
+                "en": "Camera-trap survey and density extrapolation"
+            },
+            "estimateScope": {
+                "uz": "Chatqol",
+                "ru": "Чаткал",
+                "en": "Chatqol"
+            },
+            "evidenceUrl": "https://publicera.kb.se/slr/article/download/63881/51599"
+        },
+        {
+            "id": "topolang",
+            "name": {
+                "uz": "Yuqori To‘polang",
+                "ru": "Верхний Тупаланг",
+                "en": "Upper To‘polang"
+            },
+            "latitude": 38.173,
+            "longitude": 67.186,
+            "population": null,
+            "surveyDate": "2025",
+            "populationRange": null,
+            "method": null,
+            "estimateScope": null,
+            "evidenceUrl": "https://gov.uz/en/eco/news/view/37044"
+        },
+        {
+            "id": "zarafshon",
+            "name": {
+                "uz": "Zarafshon",
+                "ru": "Зарафшан",
+                "en": "Zarafshon"
+            },
+            "latitude": 39.278,
+            "longitude": 68.331,
+            "population": null,
+            "surveyDate": null,
+            "populationRange": null,
+            "method": null,
+            "estimateScope": null,
+            "evidenceUrl": null
+        },
+        {
+            "id": "pskem",
+            "name": {
+                "uz": "Pskem–Ugam",
+                "ru": "Пскем–Угам",
+                "en": "Pskem–Ugam"
+            },
+            "latitude": 41.59,
+            "longitude": 70.25,
+            "population": "34",
+            "surveyDate": "2019–2022",
+            "populationRange": {
+                "min": 34,
+                "max": 34
+            },
+            "method": {
+                "uz": "Fototuzoq va zichlik bahosidan populyatsiya sonini hisoblash",
+                "ru": "Фотоловушки и экстраполяция оценки плотности",
+                "en": "Camera-trap survey and density extrapolation"
+            },
+            "estimateScope": {
+                "uz": "Pskem",
+                "ru": "Пскем",
+                "en": "Pskem"
+            },
+            "evidenceUrl": "https://publicera.kb.se/slr/article/download/63881/51599"
+        }
+    ],
+    "habitat": {
+        "elevationMeters": "2 000–4 500 m",
+        "summary": {
+            "uz": "Baland tog‘lar, qoyali hududlar, archa o‘rmonlari, alp va subalp o‘tloqlari.",
+            "ru": "Высокогорья, скалы, арчовые леса, альпийские и субальпийские луга.",
+            "en": "High mountains, rocky terrain, juniper woodland and alpine or subalpine meadows."
+        }
+    },
+    "conservation": {
+        "iucnCode": "VU",
+        "statusSourceId": "user-supplied-snow-leopard-doc",
+        "assessedAt": null
+    },
+    "region": "Uzbekistan",
+    "rangePolygon": null,
+    "imageIdentification": {
+        "mode": "browser_model_with_human_confirmation",
+        "model": "MobileNet V1 1.0 224 / ImageNet",
+        "confidence": null,
+        "trainedOnUserPhotos": false
+    },
+    "project": {
+        "brand": "FAUNADATA INTERNATIONAL",
+        "ideaAuthor": {
+            "uz": "Muxlisa Turopova",
+            "ru": "Мухлиса Туропова",
+            "en": "Mukhlisa Turopova"
+        },
+        "internationalName": "International Scientific Platform for Faunal Biodiversity, Species Distribution and Conservation Data of Uzbekistan"
+    },
+    "regionalEstimates": [
+        {
+            "name": {
+                "uz": "O‘zbekiston jami",
+                "ru": "Всего в Узбекистане",
+                "en": "Uzbekistan total"
+            },
+            "min": 96,
+            "max": 107,
+            "period": {
+                "uz": "2026-yilgi holat tahlili",
+                "ru": "Обзор состояния 2026 года",
+                "en": "2026 status review"
+            },
+            "method": {
+                "uz": "Voyaga yetgan individlar; avvalgi baholarni umumlashtirish",
+                "ru": "Взрослые особи; обобщение предыдущих оценок",
+                "en": "Adults; synthesis of earlier estimates"
+            },
+            "source": "https://publicera.kb.se/slr/article/download/63881/51599"
+        },
+        {
+            "name": {
+                "uz": "G‘arbiy Tyanshan",
+                "ru": "Западный Тянь-Шань",
+                "en": "Western Tien Shan"
+            },
+            "min": 46,
+            "max": 47,
+            "period": {
+                "uz": "2026-yilgi holat tahlili",
+                "ru": "Обзор состояния 2026 года",
+                "en": "2026 status review"
+            },
+            "method": {
+                "uz": "Pskem va Chatqolni qamrab olgan mintaqa",
+                "ru": "Регион включает Пскем и Чаткал",
+                "en": "Region includes Pskem and Chatqol"
+            },
+            "source": "https://publicera.kb.se/slr/article/download/63881/51599"
+        },
+        {
+            "name": {
+                "uz": "G‘arbiy Pomir–Oloy",
+                "ru": "Западный Памиро-Алай",
+                "en": "Western Pamir–Alay"
+            },
+            "min": 50,
+            "max": 60,
+            "period": {
+                "uz": "2026-yilgi holat tahlili",
+                "ru": "Обзор состояния 2026 года",
+                "en": "2026 status review"
+            },
+            "method": {
+                "uz": "Mintaqaviy baho; alohida joylarga taqsimlanmagan",
+                "ru": "Региональная оценка без распределения по точкам",
+                "en": "Regional estimate, not assigned to point locations"
+            },
+            "source": "https://publicera.kb.se/slr/article/download/63881/51599"
+        }
+    ],
+    "biologicalRecord": [
+        {
+            "label": {
+                "uz": "Nomlari",
+                "ru": "Названия",
+                "en": "Names"
+            },
+            "value": {
+                "uz": "Qor barsi / Снежный барс / Snow leopard / Panthera uncia",
+                "ru": "Qor barsi / Снежный барс / Snow leopard / Panthera uncia",
+                "en": "Qor barsi / Снежный барс / Snow leopard / Panthera uncia"
+            }
+        },
+        {
+            "label": {
+                "uz": "Taksonomiya",
+                "ru": "Таксономия",
+                "en": "Taxonomy"
+            },
+            "value": {
+                "uz": "Animalia → Chordata → Mammalia → Carnivora → Felidae → Panthera → Panthera uncia",
+                "ru": "Animalia → Chordata → Mammalia → Carnivora → Felidae → Panthera → Panthera uncia",
+                "en": "Animalia → Chordata → Mammalia → Carnivora → Felidae → Panthera → Panthera uncia"
+            }
+        },
+        {
+            "label": {
+                "uz": "Biologik tavsif",
+                "ru": "Биологическое описание",
+                "en": "Biological description"
+            },
+            "value": {
+                "uz": "Tana uzunligi 100–130 sm; dum 80–105 sm; vazni 35–55 kg.",
+                "ru": "Длина тела 100–130 см; хвост 80–105 см; масса 35–55 кг.",
+                "en": "Body length 100–130 cm; tail 80–105 cm; weight 35–55 kg."
+            }
+        },
+        {
+            "label": {
+                "uz": "Yashash muhiti",
+                "ru": "Среда обитания",
+                "en": "Habitat"
+            },
+            "value": {
+                "uz": "2 000–4 500 m: qoyalar, archa o‘rmonlari, alp va subalp o‘tloqlari.",
+                "ru": "2 000–4 500 м: скалы, арчовые леса, альпийские и субальпийские луга.",
+                "en": "2,000–4,500 m: rocks, juniper woodland, alpine and subalpine meadows."
+            }
+        },
+        {
+            "label": {
+                "uz": "Oziqlanish",
+                "ru": "Питание",
+                "en": "Diet"
+            },
+            "value": {
+                "uz": "Tog‘ echkilari, arxar, sug‘ur, quyon va mayda kemiruvchilar.",
+                "ru": "Горные козлы, архары, сурки, зайцы и мелкие грызуны.",
+                "en": "Ibex, argali, marmots, hares and small rodents."
+            }
+        },
+        {
+            "label": {
+                "uz": "Ko‘payishi",
+                "ru": "Размножение",
+                "en": "Reproduction"
+            },
+            "value": {
+                "uz": "Juftlashish: fevral–mart. Homiladorlik: 93–100 kun. Odatda 2–3 bola.",
+                "ru": "Спаривание: февраль–март. Беременность: 93–100 дней. Обычно 2–3 детёныша.",
+                "en": "Mating: February–March. Gestation: 93–100 days. Usually 2–3 cubs."
+            }
+        },
+        {
+            "label": {
+                "uz": "Qizil kitob va IUCN",
+                "ru": "Красная книга и МСОП",
+                "en": "Red Data Book and IUCN"
+            },
+            "value": {
+                "uz": "Hujjatda O‘zbekiston Qizil kitobiga kiritilgani va IUCN VU maqomi berilgan.",
+                "ru": "В документе указан в Красной книге Узбекистана; статус МСОП VU.",
+                "en": "The document lists Uzbekistan Red Data Book protection and IUCN VU status."
+            }
+        },
+        {
+            "label": {
+                "uz": "Asosiy tahdidlar",
+                "ru": "Основные угрозы",
+                "en": "Key threats"
+            },
+            "value": {
+                "uz": "Brakonerlik, yashash muhiti parchalanishi, iqlim o‘zgarishi, chorvachilik bilan konflikt va ozuqa kamayishi.",
+                "ru": "Браконьерство, фрагментация среды, изменение климата, конфликты со скотоводством и сокращение добычи.",
+                "en": "Poaching, habitat fragmentation, climate change, livestock conflict and prey decline."
+            }
+        },
+        {
+            "label": {
+                "uz": "Muhofaza choralari",
+                "ru": "Меры охраны",
+                "en": "Conservation measures"
+            },
+            "value": {
+                "uz": "Qo‘riqxonalarda muhofaza, fototuzoq monitoringi, brakonerlikka qarshi kurash, mahalliy hamkorlik va GSLEP.",
+                "ru": "Охраняемые территории, мониторинг фотоловушками, борьба с браконьерством, местное сотрудничество и GSLEP.",
+                "en": "Protected areas, camera-trap monitoring, anti-poaching, community collaboration and GSLEP."
+            }
+        }
+    ],
+    "additionalSource": "Qor_barsi_uchun_so'ralgan_qo'shimcha_ma'lumotlar.docx",
+    "plannedSpecies": [
+        {
+            "names": {
+                "uz": "Jayron",
+                "ru": "Джейран",
+                "en": "Goitered gazelle"
+            },
+            "scientificName": "Gazella subgutturosa"
+        },
+        {
+            "names": {
+                "uz": "Buxoro bug‘usi",
+                "ru": "Бухарский олень",
+                "en": "Bukhara deer"
+            },
+            "scientificName": "Cervus hanglu bactrianus"
+        },
+        {
+            "names": {
+                "uz": "Sayg‘oq",
+                "ru": "Сайгак",
+                "en": "Saiga"
+            },
+            "scientificName": "Saiga tatarica"
+        },
+        {
+            "names": {
+                "uz": "Sibir tog‘ echkisi",
+                "ru": "Сибирский козерог",
+                "en": "Siberian ibex"
+            },
+            "scientificName": "Capra sibirica"
+        },
+        {
+            "names": {
+                "uz": "Arxar",
+                "ru": "Архар",
+                "en": "Argali"
+            },
+            "scientificName": "Ovis ammon"
+        },
+        {
+            "names": {
+                "uz": "Qoraquloq",
+                "ru": "Каракал",
+                "en": "Caracal"
+            },
+            "scientificName": "Caracal caracal"
+        },
+        {
+            "names": {
+                "uz": "Manul",
+                "ru": "Манул",
+                "en": "Pallas’s cat"
+            },
+            "scientificName": "Otocolobus manul"
+        },
+        {
+            "names": {
+                "uz": "Silovsin",
+                "ru": "Рысь",
+                "en": "Eurasian lynx"
+            },
+            "scientificName": "Lynx lynx"
+        },
+        {
+            "names": {
+                "uz": "O‘rta Osiyo kobrasi",
+                "ru": "Среднеазиатская кобра",
+                "en": "Central Asian cobra"
+            },
+            "scientificName": "Naja oxiana"
+        }
+    ]
+}

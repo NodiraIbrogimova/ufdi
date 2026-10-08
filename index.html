@@ -1,8 +1,208 @@
 <!doctype html>
-<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore documented snow leopard locations in Uzbekistan in Uzbek, Russian and English."><title>Species Finder · Uzbekistan</title><link rel="stylesheet" href="assets/leaflet.css"><link rel="stylesheet" href="style.css"><script defer src="assets/leaflet.js"></script><script defer src="app.js"></script></head>
-<body><header><a class="brand" href="./"><span class="brand-icon">◈</span><span>SPECIES FINDER<small>UZBEKISTAN</small></span></a><nav aria-label="Language"><button data-lang="uz" lang="uz">O‘zbekcha</button><button data-lang="ru" lang="ru">Русский</button><button data-lang="en" lang="en">English</button></nav></header>
-<main><div class="heading"><div><p class="eyebrow" data-t="eyebrow"></p><h1 data-t="title"></h1><p class="intro" data-t="intro"></p></div><span class="version" data-t="version"></span></div>
-<div class="workspace"><aside><article class="species-card"><div class="photo"><img src="assets/snow-leopard.jpg" alt="Snow leopard / Qor barsi / Снежный барс"><span>Panthera uncia</span></div><div class="species-info"><p class="eyebrow" data-t="selected"></p><h2 data-t="species"></h2><p data-t="description"></p><div class="facts"><div><strong>2 000–4 500 m</strong><span data-t="altitude"></span></div><div><strong>VU</strong><span data-t="status"></span></div></div><small data-t="docStatus"></small></div></article><section class="location-section"><div class="section-title"><h2 data-t="locations"></h2><span class="count">05</span></div><div id="locations"></div></section></aside>
-<section class="map-section"><div class="map-toolbar"><div><span class="map-dot"></span><strong data-t="distribution"></strong></div><button id="reset" data-t="reset"></button></div><div id="map" role="region" aria-label="Uzbekistan distribution map"></div><div id="map-warning" class="notice" hidden data-t="tileError"></div><div class="legend"><span><i class="legend-dot"></i><span data-t="legend"></span></span><span data-t="notRange"></span></div><div class="detail" id="detail" aria-live="polite"></div></section></div>
-<section class="bottom-grid"><article><p class="eyebrow" data-t="evidence"></p><h2 data-t="sourceTitle"></h2><p data-t="sourceNote"></p><p class="source-name">1-tur Qor barsi Panthera.docx</p><a href="https://www.undp.org/uzbekistan/projects/completed-sustainable-natural-resource-and-forest-management-mountainous-areas" target="_blank" rel="noopener noreferrer" data-t="contextLink"></a><p class="secondary" data-t="contextNote"></p></article><article><p class="eyebrow" data-t="next"></p><h2 data-t="populationTitle"></h2><div class="scale" aria-hidden="true"></div><div class="scale-labels"><span data-t="less"></span><span data-t="more"></span></div><p data-t="populationNote"></p><button id="download" data-t="download"></button></article></section>
-<footer><span data-t="footer"></span><span>Panthera uncia · Uzbekistan</span></footer></main><noscript>Please enable JavaScript to use the interactive map.</noscript></body></html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description"
+        content="FAUNADATA INTERNATIONAL. Project idea by Mukhlisa Turopova. Uzbekistan species distribution and conservation information.">
+
+    <title>FAUNADATA INTERNATIONAL · UFDI</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script defer src="translations.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="recognition.js"></script>
+</head>
+
+<body>
+    <header>
+        <a class="brand" href="#/">
+            FAUNADATA
+            <small>INTERNATIONAL · UFDI</small>
+        </a>
+
+        <nav aria-label="Language">
+            <button data-lang="uz">O‘zbekcha</button>
+            <button data-lang="ru">Русский</button>
+            <button data-lang="en">English</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="start-view">
+            <div class="start-grid">
+                <div>
+                    <h1 data-t="startTitle"></h1>
+                    <p class="lead" data-t="startIntro"></p>
+
+                    <div class="creator">
+                        <p data-t="authorLabel"></p>
+                        <strong data-t="authorName"></strong>
+                        <span data-t="authorNote"></span>
+                    </div>
+
+                    <p class="secondary" data-t="privacy"></p>
+                </div>
+
+                <div class="panel">
+                    <h2 data-t="uploadTitle"></h2>
+
+                    <label id="drop-zone" class="drop-zone" for="animal-image" tabindex="0">
+                        <input id="animal-image" type="file" accept="image/*" hidden>
+
+                        <span class="upload-icon" aria-hidden="true">↑</span>
+                        <strong data-t="dropTitle"></strong>
+                        <span data-t="dropHelp"></span>
+                    </label>
+
+                    <p id="upload-error" class="error" role="alert" hidden></p>
+
+                    <div id="review" hidden>
+                        <img id="preview-image" class="preview" alt="">
+
+                        <p id="recognition-status" class="notice" role="status" aria-live="polite"></p>
+
+                        <p data-t="manualNote"></p>
+                        <p class="secondary" data-t="modelNote"></p>
+
+                        <div class="actions">
+                            <button id="confirm" class="primary" data-t="confirm"></button>
+
+                            <button id="uncertain" data-t="uncertain"></button>
+
+                            <button id="retry-analysis" data-t="retry" hidden></button>
+                        </div>
+
+                        <p id="uncertain-message" class="notice" data-t="uncertainMessage" hidden></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="browse-row">
+                <p data-t="onlyOne"></p>
+
+                <a href="#/species/panthera-uncia" data-t="browse"></a>
+            </div>
+
+            <section class="about-grid">
+                <div class="panel">
+                    <p class="eyebrow" data-t="aboutProject"></p>
+                    <h2>FAUNADATA INTERNATIONAL</h2>
+                    <h3 data-t="projectName"></h3>
+                    <p data-t="purpose"></p>
+                </div>
+
+                <div class="panel">
+                    <h2 data-t="recordsTitle"></h2>
+                    <p data-t="recordsIntro"></p>
+                    <ul id="project-fields"></ul>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2 data-t="plannedTitle"></h2>
+                <p data-t="plannedNote"></p>
+                <ul id="planned-species" class="planned-list"></ul>
+            </section>
+        </section>
+
+        <section id="species-view" hidden>
+            <a class="back" href="#/" data-t="back"></a>
+
+            <h1 data-t="species"></h1>
+            <p><em>Panthera uncia</em></p>
+
+            <p id="load-error" class="error" role="alert" hidden></p>
+
+            <div id="species-content">
+                <div class="map-grid">
+                    <aside class="panel">
+                        <img class="species-photo" src="assets/snow-leopard.jpg"
+                            alt="Qor barsi / Snow leopard / Снежный барс" onerror="this.hidden=true">
+
+                        <h2 data-t="species"></h2>
+                        <div id="locations"></div>
+                    </aside>
+
+                    <section class="panel map-panel">
+                        <div class="toolbar">
+                            <h2 data-t="distribution"></h2>
+                            <button id="reset" data-t="reset"></button>
+                        </div>
+
+                        <div id="map" role="region" aria-label="Uzbekistan species distribution"></div>
+
+                        <p id="map-warning" class="notice" data-t="tileError" hidden></p>
+
+                        <div class="legend">
+                            <p data-t="legend"></p>
+
+                            <span>
+                                <i class="low"></i>
+                                1–15
+                            </span>
+
+                            <span>
+                                <i class="medium"></i>
+                                16–30
+                            </span>
+
+                            <span>
+                                <i class="high"></i>
+                                31+
+                            </span>
+
+                            <span>
+                                <i class="unknown"></i>
+                                <span data-t="unknownBin"></span>
+                            </span>
+
+                            <p data-t="notRange"></p>
+                        </div>
+
+                        <div id="detail" aria-live="polite"></div>
+                    </section>
+                </div>
+
+                <section class="panel">
+                    <h2 data-t="populationTitle"></h2>
+
+                    <div id="population-evidence" class="evidence-grid"></div>
+
+                    <p class="secondary" data-t="regionalNote"></p>
+
+                    <a href="https://publicera.kb.se/slr/article/download/63881/51599" target="_blank"
+                        rel="noopener noreferrer">
+                        Gritsina et al., 2026 · Snow Leopard Reports ↗
+                    </a>
+                </section>
+
+                <section class="panel">
+                    <h2 data-t="biology"></h2>
+
+                    <div id="biology-record" class="biology-grid"></div>
+
+                    <p class="secondary" data-t="sourceCaution"></p>
+
+                    <button id="download" data-t="download"></button>
+                </section>
+            </div>
+        </section>
+
+        <footer>
+            <strong data-t="authorNote"></strong>
+        </footer>
+    </main>
+
+    <noscript>
+        JavaScript is required to use the image upload and interactive map.
+    </noscript>
+</body>
+
+</html>
