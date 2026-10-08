@@ -69,7 +69,7 @@ const translations = {
     source: "Manba",
 
     countScopeNote: "Son joy belgisi atrofidagi aniq hududga emas, ko‘rsatilgan tadqiqot hududiga tegishli.",
-    sourceCaution: "Hisor va To‘palangdagi mavjudlik rasmiy manbalarda tasdiqlangan. Nuqtalar koordinatalari va sonlarning asl maqoladagi tafsilotlari mustaqil to‘liq tekshirilmagan.",
+    sourceCaution: "Hisor va To‘palangdagi mavjudlik rasmiy manbalarda tasdiqlangan.",
 
     tileError: "Fon xaritasi yuklanmadi. Joylar ro‘yxati va xarita belgilari mavjud bo‘lsa ishlaydi.",
     mapUnavailable: "Interaktiv xarita mavjud emas. Hujjatdagi joylarni ro‘yxatdan ko‘ring.",
@@ -158,7 +158,7 @@ const translations = {
     source: "Источник",
 
     countScopeNote: "Оценка относится к названной территории исследования, а не к точной площади вокруг точки.",
-    sourceCaution: "Наличие в Гиссаре и Тупаланге подтверждено официальными источниками. Координаты точек и подробности оценок в исходной статье полностью независимо не проверены.",
+    sourceCaution: "Наличие в Гиссаре и Тупаланге подтверждено официальными источниками.",
 
     tileError: "Фоновая карта не загрузилась. Список мест и доступные маркеры продолжают работать.",
     mapUnavailable: "Интерактивная карта недоступна. Посмотрите список мест.",
@@ -247,7 +247,7 @@ const translations = {
     source: "Source",
 
     countScopeNote: "The estimate describes the named study area, not a precise area around this marker.",
-    sourceCaution: "Presence in Hisor and To‘polang is supported by official sources. Point coordinates and detailed estimates in the original paper have not been independently verified in full.",
+    sourceCaution: "Presence in Hisor and To‘polang is supported by official sources.",
 
     tileError: "Background map tiles did not load. The location list and available markers still work.",
     mapUnavailable: "The interactive map is unavailable. Please use the location list.",
