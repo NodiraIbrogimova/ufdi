@@ -3,7 +3,7 @@ const translations = {
     startTitle: "Hayvon suratini yuklang. Uning dunyosini o‘rganing.",
     startIntro: "Suratdagi turni taxmin qiling, natijani tekshiring va O‘zbekistondagi tarqalish xaritasi hamda ilmiy ma’lumotlarini oching.",
 
-    authorLabel: "LOYIHA G‘OYASI MUALLIFI",
+    authorLabel: "LOYIHA MUALLIFI",
     authorName: "Muxlisa Turopova",
     authorNote: "FAUNADATA INTERNATIONAL loyihasi g‘oyasi Muxlisa Turopovaga tegishli.",
 
@@ -92,7 +92,7 @@ const translations = {
     startTitle: "Загрузите фото животного. Изучите его мир.",
     startIntro: "Получите предположение о виде, проверьте результат и откройте карту распространения в Узбекистане с научными сведениями.",
 
-    authorLabel: "АВТОР ИДЕИ ПРОЕКТА",
+    authorLabel: "АВТОР ПРОЕКТА",
     authorName: "Мухлиса Туропова",
     authorNote: "Идея проекта FAUNADATA INTERNATIONAL принадлежит Мухлисе Туроповой.",
 
@@ -181,7 +181,7 @@ const translations = {
     startTitle: "Upload an animal photo. Explore its world.",
     startIntro: "Get a suggested species, check the result, and open its Uzbekistan distribution map with supporting scientific information.",
 
-    authorLabel: "PROJECT IDEA BY",
+    authorLabel: "PROJECT BY",
     authorName: "Mukhlisa Turopova",
     authorNote: "The idea for FAUNADATA INTERNATIONAL belongs to Mukhlisa Turopova.",
 
